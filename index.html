@@ -212,6 +212,31 @@ footer .footer-logo{height:72px;width:auto;margin:0 auto 12px}
 }
 @keyframes pulse{0%,100%{box-shadow:0 0 22px rgba(25,195,125,.55)}50%{box-shadow:0 0 40px rgba(25,195,125,.9)}}
 
+/* ---------- seção clara (avaliações) ---------- */
+.bg-light{background:#edf2ff}
+.bg-light .section-tag{color:#1a3a7a;border-color:rgba(26,58,122,.22);background:rgba(26,58,122,.07)}
+.bg-light .section-title{color:#0d1438}
+.bg-light .section-title .hl{color:#007ab8;text-shadow:none}
+.bg-light .section-sub{color:#4a5580}
+.bg-light .rating-num{color:#b8860b;text-shadow:none}
+.bg-light .stars{color:#d4920a}
+.bg-light .rating-meta p{color:#4a5580}
+.bg-light .card{
+  background:#fff;border-color:rgba(26,58,122,.14);
+  box-shadow:0 2px 18px rgba(13,20,56,.07);
+}
+.bg-light .card:hover{border-color:#007ab8;box-shadow:0 6px 30px rgba(0,122,184,.14);transform:translateY(-5px)}
+.bg-light .review-card p{color:#2d3a5e;font-style:italic}
+.bg-light .review-card .who{color:#007ab8}
+.bg-light .btn-ghost{
+  border-color:#007ab8;color:#007ab8;
+  background:rgba(0,122,184,.06);box-shadow:none;
+}
+.bg-light .btn-ghost:hover{box-shadow:0 0 22px rgba(0,122,184,.22)}
+
+/* ---------- seção escura reforçada ---------- */
+.bg-deep{background:rgba(4,7,22,.72)}
+
 /* ---------- responsivo ---------- */
 @media(max-width:900px){
   .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
@@ -330,7 +355,7 @@ footer .footer-logo{height:72px;width:auto;margin:0 auto 12px}
 </section>
 
 <!-- ======================= COMO FUNCIONA ======================= -->
-<section style="background:rgba(7,11,36,.45)">
+<section class="bg-deep">
   <div class="container split">
     <div>
       <span class="section-tag">⏱ Atendimento express</span>
@@ -390,7 +415,7 @@ footer .footer-logo{height:72px;width:auto;margin:0 auto 12px}
 </section>
 
 <!-- ======================= SOBRE ======================= -->
-<section style="background:rgba(7,11,36,.45)">
+<section class="bg-deep">
   <div class="container split">
     <div>
       <img class="owner-img" src="img/dono.jpg" alt="Especialista responsável pela PS do iPhone na bancada da loja" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -409,7 +434,7 @@ footer .footer-logo{height:72px;width:auto;margin:0 auto 12px}
 </section>
 
 <!-- ======================= AVALIAÇÕES ======================= -->
-<section id="avaliacoes">
+<section id="avaliacoes" class="bg-light">
   <div class="container center">
     <span class="section-tag">⭐ Prova social</span>
     <h2 class="section-title">Quem confiou, <span class="hl">recomenda</span></h2>
@@ -447,7 +472,7 @@ footer .footer-logo{height:72px;width:auto;margin:0 auto 12px}
 </section>
 
 <!-- ======================= LOCAL ======================= -->
-<section id="local" style="background:rgba(7,11,36,.45)">
+<section id="local" class="bg-deep">
   <div class="container split">
     <div>
       <span class="section-tag">📍 Onde estamos</span>
