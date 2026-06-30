@@ -88,6 +88,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.85);backdrop-fi
 .faq details p{padding-bottom:16px;margin:0;color:var(--muted);font-size:.95rem}
 
 /* footer */
+.area{max-width:820px;margin:0 auto;padding:46px 20px 10px;text-align:center}
+.area .tag{margin-bottom:12px}
+.area h2{font-size:clamp(1.4rem,3.4vw,2rem);font-weight:800;margin-bottom:10px}
+.area h2 .hl{color:var(--cyan)}
+.area p{color:var(--muted);font-size:.95rem;max-width:600px;margin:0 auto}
+.cities-list{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;max-width:720px;margin:22px auto 0}
+.city-chip{font-size:.84rem;font-weight:500;padding:8px 16px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--muted)}
+.city-chip.main{color:var(--cyan);border-color:var(--cyan);font-weight:600}
 footer{border-top:1px solid rgba(0,212,255,.14);padding:32px 20px;text-align:center;color:var(--muted);font-size:.84rem;margin-top:30px}
 footer a{color:var(--cyan)}
 .footer-logo{height:64px;width:auto;margin:0 auto 12px}
@@ -205,6 +213,24 @@ footer a{color:var(--cyan)}
     </details>
   </div>
 </article>
+
+<section class="area">
+  <span class="tag">📍 Área de atendimento</span>
+  <h2>Atendemos <span class="hl">Carapicuíba e região</span></h2>
+  <p>Recebemos clientes de toda a região metropolitana oeste de São Paulo. E enviamos iPhones para todo o Brasil. 🇧🇷</p>
+  <div class="cities-list">
+    <span class="city-chip main">Carapicuíba</span>
+    <span class="city-chip">Osasco</span>
+    <span class="city-chip">Barueri</span>
+    <span class="city-chip">Alphaville</span>
+    <span class="city-chip">Santana de Parnaíba</span>
+    <span class="city-chip">Cotia</span>
+    <span class="city-chip">Itapevi</span>
+    <span class="city-chip">Jandira</span>
+    <span class="city-chip">Vargem Grande Paulista</span>
+    <span class="city-chip">+ regiões próximas</span>
+  </div>
+</section>
 
 <footer>
   <img class="footer-logo" src="/img/logo.png" alt="Logo PS do iPhone — Pronto Socorro do iPhone, Carapicuíba/SP">
