@@ -221,6 +221,13 @@ header{
 .final-cta h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;margin-bottom:12px}
 .final-cta p{color:var(--muted);margin-bottom:30px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
 
+/* ---------- área de atendimento ---------- */
+.area{padding:64px 20px;border-top:1px solid rgba(0,212,255,.12);text-align:center}
+.cities-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:780px;margin:26px auto 0}
+.city-chip{font-size:.88rem;font-weight:500;padding:9px 18px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--muted);transition:color .2s,border-color .2s}
+.city-chip:hover{color:var(--cyan);border-color:var(--cyan)}
+.city-chip.main{color:var(--cyan);border-color:var(--cyan);font-weight:600}
+
 /* ---------- footer ---------- */
 footer{border-top:1px solid rgba(0,212,255,.14);padding:36px 20px;text-align:center;color:var(--muted);font-size:.85rem}
 footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
@@ -331,7 +338,16 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
     "latitude": -23.5391518,
     "longitude": -46.8339482
   },
-  "areaServed": "Carapicuíba e região metropolitana de São Paulo",
+  "areaServed": [
+    {"@type":"City","name":"Carapicuíba"},
+    {"@type":"City","name":"Osasco"},
+    {"@type":"City","name":"Barueri"},
+    {"@type":"City","name":"Santana de Parnaíba"},
+    {"@type":"City","name":"Cotia"},
+    {"@type":"City","name":"Itapevi"},
+    {"@type":"City","name":"Jandira"},
+    {"@type":"City","name":"Vargem Grande Paulista"}
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -715,6 +731,27 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
     <h2>Seu iPhone precisa de <span style="color:var(--cyan);text-shadow:0 0 24px rgba(0,212,255,.6)">socorro</span>?</h2>
     <p>Chama agora no WhatsApp, reserva o seu horário e resolve hoje — reparo express em até 60 minutos com garantia blindada.</p>
     <a class="btn btn-wpp" style="font-size:1.05rem;padding:16px 36px" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Meu%20iPhone%20precisa%20de%20socorro!" target="_blank" rel="noopener">💬 Chamar no WhatsApp agora</a>
+  </div>
+</section>
+
+<!-- ======================= ÁREA DE ATENDIMENTO ======================= -->
+<section class="area">
+  <div class="container">
+    <span class="section-tag">📍 Área de atendimento</span>
+    <h2 class="section-title" style="font-size:clamp(1.7rem,3.8vw,2.5rem)">Atendemos <span class="hl">Carapicuíba e região</span></h2>
+    <p class="section-sub center" style="margin:0 auto">Recebemos clientes de toda a região metropolitana oeste de São Paulo. E para quem está longe, <strong style="color:var(--white)">enviamos iPhones para todo o Brasil</strong>. 🇧🇷</p>
+    <div class="cities-list">
+      <span class="city-chip main">Carapicuíba</span>
+      <span class="city-chip">Osasco</span>
+      <span class="city-chip">Barueri</span>
+      <span class="city-chip">Alphaville</span>
+      <span class="city-chip">Santana de Parnaíba</span>
+      <span class="city-chip">Cotia</span>
+      <span class="city-chip">Itapevi</span>
+      <span class="city-chip">Jandira</span>
+      <span class="city-chip">Vargem Grande Paulista</span>
+      <span class="city-chip">+ regiões próximas</span>
+    </div>
   </div>
 </section>
 
