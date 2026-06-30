@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://psdoiphone.com.br/sitemap.xml
+Sitemap: https://www.psdoiphone.com.br/sitemap.xml
