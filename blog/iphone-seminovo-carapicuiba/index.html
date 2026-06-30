@@ -65,6 +65,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.85);backdrop-fi
 .box-info{background:rgba(0,212,255,.07);border-color:var(--card-border)}
 .box-info b{color:var(--cyan)}
 .box h3{margin-top:0;color:inherit}
+/* bloco claro (respiro visual) */
+.block-light{background:#eef2fb;border-radius:18px;padding:30px 30px 24px;margin:34px 0}
+.block-light h2{color:#0d1438;margin:0 0 14px}
+.block-light p{color:#3a4668}
+.block-light ol,.block-light ul{color:#2d3a5e}
+.block-light strong{color:#0d1438}
+.block-light .faq details{background:#fff;border-color:rgba(26,58,122,.14);box-shadow:0 2px 12px rgba(13,20,56,.06)}
+.block-light .faq summary{color:#0d1438}
+.block-light .faq summary::after{color:#007ab8}
+.block-light .faq details[open]{border-color:#007ab8}
+.block-light .faq details p{color:#4a5580}
 .cta-box{background:linear-gradient(145deg,rgba(0,212,255,.10),rgba(255,59,48,.08));border:1px solid rgba(0,212,255,.3);border-radius:20px;padding:34px 28px;text-align:center;margin:40px 0 10px;box-shadow:0 0 40px rgba(0,212,255,.1)}
 .cta-box h2{margin:0 0 10px}
 .cta-box p{margin-bottom:22px}
@@ -154,15 +165,17 @@ footer a{color:var(--cyan)}
     <p style="margin:0;color:#e8c9c6">O iPhone está com <b>conta iCloud travada</b> (Bloqueio de Ativação) — pode ser roubado.</p>
   </div>
 
-  <h2>Checklist: o que conferir antes de comprar</h2>
-  <ol>
-    <li><strong>Saúde da bateria:</strong> em Ajustes → Bateria → Saúde da bateria. Acima de 80% é o ideal.</li>
-    <li><strong>Bloqueio de Ativação (iCloud):</strong> o aparelho não pode estar vinculado à conta de outra pessoa.</li>
-    <li><strong>IMEI e procedência:</strong> confira o IMEI e peça comprovante de origem.</li>
-    <li><strong>Tela, botões, câmeras e Face ID/Touch ID:</strong> teste tudo funcionando.</li>
-    <li><strong>Carregamento:</strong> conecte e veja se carrega normal.</li>
-    <li><strong>Garantia por escrito:</strong> o prazo e o que cobre, combinado antes.</li>
-  </ol>
+  <div class="block-light">
+    <h2>Checklist: o que conferir antes de comprar</h2>
+    <ol>
+      <li><strong>Saúde da bateria:</strong> em Ajustes → Bateria → Saúde da bateria. Acima de 80% é o ideal.</li>
+      <li><strong>Bloqueio de Ativação (iCloud):</strong> o aparelho não pode estar vinculado à conta de outra pessoa.</li>
+      <li><strong>IMEI e procedência:</strong> confira o IMEI e peça comprovante de origem.</li>
+      <li><strong>Tela, botões, câmeras e Face ID/Touch ID:</strong> teste tudo funcionando.</li>
+      <li><strong>Carregamento:</strong> conecte e veja se carrega normal.</li>
+      <li><strong>Garantia por escrito:</strong> o prazo e o que cobre, combinado antes.</li>
+    </ol>
+  </div>
 
   <div class="box box-info">
     <h3>💡 A vantagem de comprar local (e não de e-commerce distante)</h3>
@@ -178,6 +191,7 @@ footer a{color:var(--cyan)}
     <a class="btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Quero%20ver%20os%20iPhones%20seminovos%20dispon%C3%ADveis." target="_blank" rel="noopener">💬 Ver seminovos no WhatsApp</a>
   </div>
 
+  <div class="block-light">
   <h2>Perguntas frequentes</h2>
   <div class="faq">
     <details open>
@@ -196,6 +210,7 @@ footer a{color:var(--cyan)}
       <summary>Qual a garantia de um iPhone seminovo?</summary>
       <p>Na PS do iPhone, os seminovos revisados saem com 3 meses de garantia e os lacrados com 1 ano. Desconfie de quem vende seminovo sem nenhuma garantia.</p>
     </details>
+  </div>
   </div>
 </article>
 
