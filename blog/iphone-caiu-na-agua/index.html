@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone Caiu na Água? O Que Fazer (e o Que NUNCA Fazer) | PS do iPhone</title>
+<meta name="description" content="Seu iPhone caiu na água? Veja o passo a passo do que fazer nos primeiros minutos, o que nunca fazer (arroz, secador) e por que cada hora conta. Carapicuíba.">
+<link rel="canonical" href="https://psdoiphone.com.br/blog/iphone-caiu-na-agua/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#070b24">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone Caiu na Água? O Que Fazer (e o Que NUNCA Fazer)">
+<meta property="og:description" content="Passo a passo dos primeiros minutos, o que nunca fazer e por que cada hora conta para salvar seu iPhone molhado.">
+<meta property="og:url" content="https://psdoiphone.com.br/blog/iphone-caiu-na-agua/">
+<meta property="og:image" content="https://psdoiphone.com.br/img/logo.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="PS do iPhone">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Saira+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-1:#070b24;--bg-2:#1a0b3b;--bg-3:#2a0a4a;
+  --cyan:#00d4ff;--red:#ff3b30;--orange:#ff5e3a;--gold:#ffd23f;
+  --white:#ffffff;--muted:#aab3d6;
+  --card:rgba(13,20,56,.72);--card-border:rgba(0,212,255,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(1200px 800px at 80% -10%,rgba(224,64,251,.18),transparent 60%),
+             radial-gradient(1000px 700px at -10% 30%,rgba(0,212,255,.12),transparent 55%),
+             linear-gradient(160deg,var(--bg-1) 0%,var(--bg-2) 55%,var(--bg-3) 100%);
+  color:var(--white);overflow-x:hidden;line-height:1.7;
+}
+h1,h2,h3{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px;line-height:1.1}
+img{max-width:100%;display:block}
+a{color:var(--cyan);text-decoration:none}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,212,255,.15)}
+.nav{max-width:820px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand-logo{height:64px;width:auto;display:block}
+.nav .back{font-size:.9rem;font-weight:600;color:var(--muted)}
+.nav .back:hover{color:var(--cyan)}
+@media(max-width:560px){.brand-logo{height:52px}.nav .back{display:none}}
+
+/* article */
+.wrap{max-width:820px;margin:0 auto;padding:48px 20px 40px}
+.crumb{font-size:.82rem;color:var(--muted);margin-bottom:18px}
+.crumb a{color:var(--muted)}.crumb a:hover{color:var(--cyan)}
+.tag{display:inline-block;font-size:.74rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);border:1px solid var(--card-border);padding:5px 14px;border-radius:999px;margin-bottom:16px;background:rgba(0,212,255,.06)}
+.wrap h1{font-size:clamp(2rem,5.5vw,3.2rem);font-weight:900;margin-bottom:14px}
+.wrap h1 .hl{color:var(--cyan);text-shadow:0 0 24px rgba(0,212,255,.5)}
+.meta{font-size:.85rem;color:var(--muted);margin-bottom:30px;border-bottom:1px solid rgba(0,212,255,.15);padding-bottom:20px}
+.lead{font-size:1.12rem;color:#dfe5ff;margin-bottom:28px}
+.wrap h2{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:800;margin:38px 0 14px;color:var(--white)}
+.wrap h3{font-size:1.15rem;font-weight:700;margin:24px 0 8px;color:var(--cyan);text-transform:none;font-family:'Poppins',sans-serif}
+.wrap p{color:#cdd4f0;margin-bottom:16px}
+.wrap strong{color:var(--white)}
+.wrap ul,.wrap ol{margin:0 0 18px 4px;padding-left:22px;color:#cdd4f0}
+.wrap li{margin-bottom:9px}
+
+/* callouts */
+.box{border-radius:14px;padding:20px 22px;margin:22px 0;border:1px solid}
+.box-danger{background:rgba(255,59,48,.08);border-color:rgba(255,59,48,.4)}
+.box-danger b{color:var(--red)}
+.box-info{background:rgba(0,212,255,.07);border-color:var(--card-border)}
+.box-info b{color:var(--cyan)}
+.box h3{margin-top:0;color:inherit}
+
+/* cta */
+.cta-box{background:linear-gradient(145deg,rgba(0,212,255,.10),rgba(255,59,48,.08));border:1px solid rgba(0,212,255,.3);border-radius:20px;padding:34px 28px;text-align:center;margin:40px 0 10px;box-shadow:0 0 40px rgba(0,212,255,.1)}
+.cta-box h2{margin:0 0 10px}
+.cta-box p{margin-bottom:22px}
+.btn-wpp{display:inline-flex;align-items:center;gap:10px;font-weight:600;border-radius:999px;padding:15px 32px;font-size:1rem;background:linear-gradient(90deg,#19c37d,#0fa968);color:#fff;box-shadow:0 0 22px rgba(25,195,125,.45);transition:transform .15s,box-shadow .2s}
+.btn-wpp:hover{transform:translateY(-2px);box-shadow:0 0 34px rgba(25,195,125,.7);color:#fff}
+
+/* mini faq */
+.faq details{background:var(--card);border:1px solid var(--card-border);border-radius:12px;margin-bottom:12px;padding:0 20px}
+.faq summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:600;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:'Saira Condensed',sans-serif;font-size:1.5rem;color:var(--cyan)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding-bottom:16px;margin:0;color:var(--muted);font-size:.95rem}
+
+/* footer */
+footer{border-top:1px solid rgba(0,212,255,.14);padding:32px 20px;text-align:center;color:var(--muted);font-size:.84rem;margin-top:30px}
+footer a{color:var(--cyan)}
+.footer-logo{height:64px;width:auto;margin:0 auto 12px}
+
+/* whatsapp flutuante */
+.wpp-float{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(18,140,126,.5);animation:bob 2.6s ease-in-out infinite}
+.wpp-float svg{width:32px;height:32px;fill:#fff}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+</style>
+
+<!-- SCHEMA: Article -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"iPhone caiu na água: o que fazer (e o que NUNCA fazer)",
+  "description":"Passo a passo do que fazer nos primeiros minutos quando o iPhone cai na água, o que nunca fazer e por que cada hora conta para recuperar o aparelho.",
+  "image":"https://psdoiphone.com.br/img/logo.png",
+  "datePublished":"2026-06-30",
+  "dateModified":"2026-06-30",
+  "author":{"@type":"Organization","name":"PS do iPhone"},
+  "publisher":{
+    "@type":"Organization","name":"Pronto Socorro do iPhone",
+    "logo":{"@type":"ImageObject","url":"https://psdoiphone.com.br/img/logo.png"}
+  },
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://psdoiphone.com.br/blog/iphone-caiu-na-agua/"}
+}
+</script>
+<!-- SCHEMA: FAQ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Colocar o iPhone no arroz funciona?","acceptedAnswer":{"@type":"Answer","text":"Não. O arroz não puxa a umidade de dentro do aparelho e ainda solta pó e amido nas entradas. Enquanto isso, a água segue oxidando a placa por dentro. É um mito que faz perder tempo precioso."}},
+    {"@type":"Question","name":"Quanto tempo tenho para salvar um iPhone que caiu na água?","acceptedAnswer":{"@type":"Answer","text":"As primeiras 2 a 4 horas são as de maior chance de recuperação. Até 24 horas ainda há boas chances. Depois disso, a oxidação avança e o prognóstico piora. Por isso, quanto antes levar à assistência, melhor."}},
+    {"@type":"Question","name":"Meu iPhone molhou mas voltou a funcionar. Preciso me preocupar?","acceptedAnswer":{"@type":"Answer","text":"Sim. Mesmo funcionando, a água iniciou um processo de oxidação interna que pode corroer a placa nos dias seguintes e causar falhas depois. O ideal é fazer uma limpeza interna preventiva o quanto antes."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/" aria-label="Página inicial PS do iPhone"><img class="brand-logo" src="/img/logo.png" alt="PS do iPhone — assistência técnica de iPhone em Carapicuíba"></a>
+    <a class="back" href="/">← Voltar ao site</a>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="crumb"><a href="/">Início</a> › <a href="/">Dicas</a> › iPhone caiu na água</div>
+  <span class="tag">💧 Emergência Apple</span>
+  <h1>iPhone caiu na água: o que fazer <span class="hl">(e o que NUNCA fazer)</span></h1>
+  <div class="meta">Atualizado em 30/06/2026 · por PS do iPhone — Carapicuíba/SP</div>
+
+  <p class="lead"><strong>Resumo rápido:</strong> desligue o iPhone imediatamente, NÃO tente carregar, NÃO use arroz nem secador, e leve a uma assistência o quanto antes. As primeiras horas decidem se o aparelho será recuperado — porque a água começa a oxidar a placa por dentro na hora.</p>
+
+  <p>Derrubou o iPhone na piscina, no vaso, na praia ou derramou líquido em cima? Respira. O que você faz (e o que você <strong>não</strong> faz) nos próximos minutos faz toda a diferença. Esse guia é direto ao ponto, sem enrolação — porque numa emergência dessas, cada minuto conta.</p>
+
+  <h2>Os primeiros 5 minutos: o que fazer AGORA</h2>
+  <ol>
+    <li><strong>Tire o iPhone da água imediatamente</strong> e seque a parte externa com um pano macio.</li>
+    <li><strong>Desligue o aparelho na hora.</strong> Não fique testando se funciona — manter ligado com a placa molhada é o que mais causa curto-circuito.</li>
+    <li><strong>Não conecte no carregador</strong> de jeito nenhum (explicamos o porquê abaixo).</li>
+    <li><strong>Deixe na vertical</strong>, com as entradas para baixo, para a água escorrer para fora.</li>
+    <li><strong>Não balance nem sacuda</strong> com força — isso espalha a água para áreas que ainda estavam secas.</li>
+    <li><strong>Leve a uma assistência especializada o quanto antes.</strong> Quanto mais cedo, maior a chance.</li>
+  </ol>
+
+  <div class="box box-danger">
+    <h3>🚫 O que você NUNCA deve fazer</h3>
+    <p style="margin-bottom:8px;color:#e8c9c6"><b>Arroz:</b> mito clássico. O arroz não suga a umidade de dentro e ainda solta pó nas entradas. Enquanto isso, a oxidação continua.</p>
+    <p style="margin-bottom:8px;color:#e8c9c6"><b>Secador de cabelo:</b> o calor empurra a água para dentro e pode danificar componentes sensíveis.</p>
+    <p style="margin-bottom:8px;color:#e8c9c6"><b>Carregar o aparelho:</b> energia + água na placa = curto-circuito quase garantido. É o erro que mais "mata" iPhone molhado.</p>
+    <p style="margin:0;color:#e8c9c6"><b>Ligar para testar:</b> cada vez que você liga, passa corrente por uma placa úmida e aumenta o estrago.</p>
+  </div>
+
+  <h2>Por que cada hora conta?</h2>
+  <p>Quando a água entra em contato com a placa e a energia da bateria, começa na hora um processo de <strong>oxidação e corrosão</strong>. É como uma ferrugem acelerada comendo as trilhas internas do aparelho. Não é o "molhar" que destrói o iPhone — é o tempo que ele fica molhado por dentro.</p>
+  <p>Na prática: as <strong>primeiras 2 a 4 horas</strong> são as de maior chance de recuperação. Até 24 horas ainda há boas chances. Depois disso, o estrago avança. Por isso a regra de ouro é simples: <strong>quanto antes chegar na assistência, melhor.</strong></p>
+
+  <h2>"Secou e voltou a funcionar" — ainda é perigoso?</h2>
+  <p>Sim. Esse é o erro mais comum. O iPhone molha, a pessoa espera, ele liga de novo e parece tudo certo. Só que a oxidação iniciada ali continua corroendo a placa <strong>nos dias seguintes</strong> — e o aparelho pode falhar depois, do nada, às vezes de forma pior e mais cara de resolver.</p>
+  <p>Mesmo que tenha voltado a funcionar, o ideal é fazer uma <strong>limpeza interna preventiva</strong> o quanto antes. Sai muito mais barato que esperar a placa morrer.</p>
+
+  <h2>Como uma assistência especializada recupera o aparelho</h2>
+  <p>Em uma assistência de verdade, o processo não é "deixar secar". É técnico:</p>
+  <ul>
+    <li>Desconexão imediata da bateria para cortar a energia que alimenta a oxidação;</li>
+    <li>Abertura e limpeza da placa em <strong>cuba ultrassônica</strong> com produtos específicos para eletrônica;</li>
+    <li>Análise sob <strong>microscópio</strong> para identificar trilhas e componentes corroídos;</li>
+    <li>Substituição ou ressolda do que estiver comprometido.</li>
+  </ul>
+  <p>É exatamente esse tipo de reparo de placa (microeletrônica) que recupera aparelhos que outras assistências já tinham condenado. <a href="/#servicos">Veja todos os serviços da PS do iPhone →</a></p>
+
+  <div class="cta-box">
+    <h2>Seu iPhone molhou em <span style="color:var(--cyan)">Carapicuíba</span>?</h2>
+    <p>Não espere pra ver no que dá — cada hora reduz a chance de recuperação. Chama a gente agora e traz o aparelho o quanto antes. Atendimento de emergência. 🚨</p>
+    <a class="btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Meu%20iPhone%20caiu%20na%20%C3%A1gua%20e%20preciso%20de%20socorro%20urgente!" target="_blank" rel="noopener">💬 Chamar no WhatsApp agora</a>
+  </div>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details open>
+      <summary>Colocar o iPhone no arroz funciona?</summary>
+      <p>Não. O arroz não puxa a umidade de dentro do aparelho e ainda solta pó e amido nas entradas. Enquanto isso, a água segue oxidando a placa por dentro. É um mito que faz perder tempo precioso.</p>
+    </details>
+    <details>
+      <summary>Quanto tempo tenho para salvar um iPhone que caiu na água?</summary>
+      <p>As primeiras 2 a 4 horas são as de maior chance de recuperação. Até 24 horas ainda há boas chances. Depois disso, a oxidação avança e o prognóstico piora. Quanto antes levar à assistência, melhor.</p>
+    </details>
+    <details>
+      <summary>Meu iPhone molhou mas voltou a funcionar. Preciso me preocupar?</summary>
+      <p>Sim. Mesmo funcionando, a água iniciou uma oxidação interna que pode corroer a placa nos dias seguintes e causar falhas depois. O ideal é fazer uma limpeza interna preventiva o quanto antes.</p>
+    </details>
+  </div>
+</article>
+
+<footer>
+  <img class="footer-logo" src="/img/logo.png" alt="Logo PS do iPhone — Pronto Socorro do iPhone, Carapicuíba/SP">
+  <p>Pronto Socorro do iPhone · Loja & Assistência Premium<br>
+  R. Veneza, 33 — Vila Santa Lucia, Carapicuíba/SP · (11) 96934-6452</p>
+  <p style="margin-top:10px"><a href="/">psdoiphone.com.br</a></p>
+</footer>
+
+<a class="wpp-float" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Meu%20iPhone%20caiu%20na%20%C3%A1gua%20e%20preciso%20de%20socorro%20urgente!" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+</body>
+</html>
