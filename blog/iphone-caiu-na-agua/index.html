@@ -71,6 +71,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.85);backdrop-fi
 .box-info{background:rgba(0,212,255,.07);border-color:var(--card-border)}
 .box-info b{color:var(--cyan)}
 .box h3{margin-top:0;color:inherit}
+/* bloco claro (respiro visual) */
+.block-light{background:#eef2fb;border-radius:18px;padding:30px 30px 24px;margin:34px 0}
+.block-light h2{color:#0d1438;margin:0 0 14px}
+.block-light p{color:#3a4668}
+.block-light ol,.block-light ul{color:#2d3a5e}
+.block-light strong{color:#0d1438}
+.block-light .faq details{background:#fff;border-color:rgba(26,58,122,.14);box-shadow:0 2px 12px rgba(13,20,56,.06)}
+.block-light .faq summary{color:#0d1438}
+.block-light .faq summary::after{color:#007ab8}
+.block-light .faq details[open]{border-color:#007ab8}
+.block-light .faq details p{color:#4a5580}
 
 /* cta */
 .cta-box{background:linear-gradient(145deg,rgba(0,212,255,.10),rgba(255,59,48,.08));border:1px solid rgba(0,212,255,.3);border-radius:20px;padding:34px 28px;text-align:center;margin:40px 0 10px;box-shadow:0 0 40px rgba(0,212,255,.1)}
@@ -155,15 +166,17 @@ footer a{color:var(--cyan)}
 
   <p>Derrubou o iPhone na piscina, no vaso, na praia ou derramou líquido em cima? Respira. O que você faz (e o que você <strong>não</strong> faz) nos próximos minutos faz toda a diferença. Esse guia é direto ao ponto, sem enrolação — porque numa emergência dessas, cada minuto conta.</p>
 
-  <h2>Os primeiros 5 minutos: o que fazer AGORA</h2>
-  <ol>
-    <li><strong>Tire o iPhone da água imediatamente</strong> e seque a parte externa com um pano macio.</li>
-    <li><strong>Desligue o aparelho na hora.</strong> Não fique testando se funciona — manter ligado com a placa molhada é o que mais causa curto-circuito.</li>
-    <li><strong>Não conecte no carregador</strong> de jeito nenhum (explicamos o porquê abaixo).</li>
-    <li><strong>Deixe na vertical</strong>, com as entradas para baixo, para a água escorrer para fora.</li>
-    <li><strong>Não balance nem sacuda</strong> com força — isso espalha a água para áreas que ainda estavam secas.</li>
-    <li><strong>Leve a uma assistência especializada o quanto antes.</strong> Quanto mais cedo, maior a chance.</li>
-  </ol>
+  <div class="block-light">
+    <h2>Os primeiros 5 minutos: o que fazer AGORA</h2>
+    <ol>
+      <li><strong>Tire o iPhone da água imediatamente</strong> e seque a parte externa com um pano macio.</li>
+      <li><strong>Desligue o aparelho na hora.</strong> Não fique testando se funciona — manter ligado com a placa molhada é o que mais causa curto-circuito.</li>
+      <li><strong>Não conecte no carregador</strong> de jeito nenhum (explicamos o porquê abaixo).</li>
+      <li><strong>Deixe na vertical</strong>, com as entradas para baixo, para a água escorrer para fora.</li>
+      <li><strong>Não balance nem sacuda</strong> com força — isso espalha a água para áreas que ainda estavam secas.</li>
+      <li><strong>Leve a uma assistência especializada o quanto antes.</strong> Quanto mais cedo, maior a chance.</li>
+    </ol>
+  </div>
 
   <div class="box box-danger">
     <h3>🚫 O que você NUNCA deve fazer</h3>
@@ -197,6 +210,7 @@ footer a{color:var(--cyan)}
     <a class="btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Meu%20iPhone%20caiu%20na%20%C3%A1gua%20e%20preciso%20de%20socorro%20urgente!" target="_blank" rel="noopener">💬 Chamar no WhatsApp agora</a>
   </div>
 
+  <div class="block-light">
   <h2>Perguntas frequentes</h2>
   <div class="faq">
     <details open>
@@ -211,6 +225,7 @@ footer a{color:var(--cyan)}
       <summary>Meu iPhone molhou mas voltou a funcionar. Preciso me preocupar?</summary>
       <p>Sim. Mesmo funcionando, a água iniciou uma oxidação interna que pode corroer a placa nos dias seguintes e causar falhas depois. O ideal é fazer uma limpeza interna preventiva o quanto antes.</p>
     </details>
+  </div>
   </div>
 </article>
 
