@@ -142,6 +142,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.82);backdrop-fi
 .city-chip:hover{color:var(--cyan);border-color:var(--cyan)}
 .city-chip.main{color:var(--cyan);border-color:var(--cyan);font-weight:600}
 
+/* vídeos */
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:44px auto 0}
+.video-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--card-border);box-shadow:0 0 26px rgba(0,212,255,.14);background:#000;transition:transform .2s,box-shadow .25s}
+.video-card:hover{transform:translateY(-5px);box-shadow:0 0 34px rgba(0,212,255,.28)}
+.video-card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer}
+@media(max-width:760px){.videos-grid{grid-template-columns:1fr;max-width:340px}}
+
 /* cta final */
 .final-cta{text-align:center;background:linear-gradient(145deg,rgba(0,212,255,.12),rgba(255,59,48,.08));border:1px solid rgba(0,212,255,.3);border-radius:26px;padding:60px 30px;max-width:920px;margin:0 auto;box-shadow:0 0 50px rgba(0,212,255,.12)}
 .final-cta h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;margin-bottom:12px}
@@ -279,6 +286,20 @@ footer a{color:var(--cyan)}
       <div style="margin-top:28px">
         <a class="btn btn-ghost" href="https://www.instagram.com/psdoiphone" target="_blank" rel="noopener">📸 Seguir no Instagram</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS (escuro) -->
+<section class="dark pad" id="trabalho">
+  <div class="container center">
+    <span class="eyebrow reveal">🎬 Portas abertas</span>
+    <h2 class="h-sec reveal">Veja o nosso <span class="hl">trabalho</span></h2>
+    <p class="sub center reveal">Transparência total: dá uma olhada em alguns reparos e no dia a dia da bancada.</p>
+    <div class="videos-grid">
+      <div class="video-card reveal"><video controls playsinline preload="metadata" src="/videos/video1.mp4#t=0.5"></video></div>
+      <div class="video-card reveal"><video controls playsinline preload="metadata" src="/videos/video2.mp4#t=0.5"></video></div>
+      <div class="video-card reveal"><video controls playsinline preload="metadata" src="/videos/video3.mp4#t=0.5"></video></div>
     </div>
   </div>
 </section>
