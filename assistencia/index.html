@@ -273,6 +273,11 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
   background:rgba(0,122,184,.06);box-shadow:none;
 }
 .bg-light .btn-ghost:hover{box-shadow:0 0 22px rgba(0,122,184,.22)}
+.bg-light .faq details{background:#fff;border-color:rgba(26,58,122,.14);box-shadow:0 2px 12px rgba(13,20,56,.06)}
+.bg-light .faq summary{color:#0d1438}
+.bg-light .faq summary::after{color:#007ab8}
+.bg-light .faq details[open]{border-color:#007ab8}
+.bg-light .faq details p{color:#4a5580}
 
 /* ---------- seção escura reforçada ---------- */
 .bg-deep{background:rgba(4,7,22,.72)}
@@ -707,7 +712,7 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
 </section>
 
 <!-- ======================= FAQ ======================= -->
-<section id="faq">
+<section id="faq" class="bg-light">
   <div class="container center">
     <span class="section-tag">❓ Perguntas frequentes</span>
     <h2 class="section-title">Ainda com <span class="hl">dúvida</span>?</h2>
