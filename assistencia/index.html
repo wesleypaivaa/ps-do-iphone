@@ -277,6 +277,13 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
 /* ---------- seção escura reforçada ---------- */
 .bg-deep{background:rgba(4,7,22,.72)}
 
+/* ---------- vídeos ---------- */
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:42px auto 0}
+.video-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--card-border);box-shadow:0 0 26px rgba(0,212,255,.14);background:#000;transition:transform .2s,box-shadow .25s}
+.video-card:hover{transform:translateY(-5px);box-shadow:0 0 34px rgba(0,212,255,.28)}
+.video-card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer}
+@media(max-width:760px){.videos-grid{grid-template-columns:1fr;max-width:340px}}
+
 /* ---------- responsivo ---------- */
 @media(max-width:900px){
   .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
@@ -568,6 +575,20 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
         <div class="step-num">4</div>
         <div><h3>Garantia blindada</h3><p>Todo reparo sai com 3 meses de garantia. Segurança total pra você.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= VÍDEOS ======================= -->
+<section class="bg-deep" id="trabalho">
+  <div class="container center">
+    <span class="section-tag">🎬 Portas abertas</span>
+    <h2 class="section-title">Veja o nosso <span class="hl">trabalho</span></h2>
+    <p class="section-sub center">Transparência total: dá uma olhada em alguns reparos e no dia a dia da bancada.</p>
+    <div class="videos-grid">
+      <div class="video-card"><video controls playsinline preload="metadata" src="/videos/video1.mp4#t=0.5"></video></div>
+      <div class="video-card"><video controls playsinline preload="metadata" src="/videos/video2.mp4#t=0.5"></video></div>
+      <div class="video-card"><video controls playsinline preload="metadata" src="/videos/video3.mp4#t=0.5"></video></div>
     </div>
   </div>
 </section>
