@@ -115,10 +115,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.82);backdrop-fi
 .hub-card:hover{transform:translateY(-7px);box-shadow:0 18px 42px rgba(13,20,56,.16)}
 .hub-ic{font-size:2.2rem;margin-bottom:14px;display:block}
 .hub-card h3{font-size:1.32rem;font-weight:800;color:var(--ink);margin-bottom:8px}
-.hub-card p{color:var(--ink-soft);font-size:.94rem;margin-bottom:18px}
-.hub-link{font-weight:700;color:#0a72ad;font-size:.92rem;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
-.hub-card:hover .hub-link{gap:11px}
+.hub-card p{color:var(--ink-soft);font-size:.94rem;margin-bottom:0}
 @media(max-width:860px){.hub{grid-template-columns:1fr}}
+/* iphone no boleto (claro) */
+.boleto-wrap{max-width:780px;margin:40px auto 0;background:linear-gradient(180deg,#fff,#f3f6ff);border:1px solid #e2e8ff;border-radius:24px;padding:44px 40px;text-align:center;position:relative;overflow:hidden;box-shadow:0 22px 54px -26px rgba(20,40,120,.3)}
+.boleto-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--cyan),#7b5cff,var(--orange))}
+.boleto-wrap h2{margin-bottom:14px}
+.boleto-wrap .sub{max-width:600px;margin:0 auto}
+.boleto-mods{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;margin:24px auto 0;max-width:640px}
+.boleto-mods li{background:#eef2ff;color:#2a3566;font-weight:600;font-size:.88rem;padding:9px 16px;border-radius:999px;border:1px solid #dbe3ff}
+.boleto-disc{font-size:.76rem;color:#8a93b2;margin:18px auto 0;max-width:560px;line-height:1.5}
+@media(max-width:560px){.boleto-wrap{padding:34px 22px}.boleto-mods li{font-size:.82rem;padding:8px 13px}}
 
 /* sobre — escuro */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
@@ -279,24 +286,21 @@ footer a{color:var(--cyan)}
     <h2 class="h-sec reveal">Especialistas em iPhone, <span class="hl">de ponta a ponta</span></h2>
     <p class="sub reveal">Do reparo de emergência à compra do seu próximo aparelho, a gente resolve tudo com transparência e garantia.</p>
     <div class="hub">
-      <a class="hub-card reveal" href="/assistencia/">
+      <div class="hub-card reveal">
         <span class="hub-ic">🔧</span>
         <h3>Assistência técnica</h3>
         <p>Tela, bateria, placa, dano por água e mais. Reparo express em até 1 hora, com garantia — e você acompanha ao vivo.</p>
-        <span class="hub-link">Ver assistência →</span>
-      </a>
-      <a class="hub-card reveal" href="/comprar-iphone-parcelado-no-boleto/">
+      </div>
+      <div class="hub-card reveal">
         <span class="hub-ic">💳</span>
         <h3>iPhone no boleto</h3>
         <p>Compre parcelado sem cartão de crédito, com aprovação facilitada. Consignado, INSS, FGTS, conta de luz e mais.</p>
-        <span class="hub-link">Fazer pré-análise →</span>
-      </a>
-      <a class="hub-card reveal" href="/assistencia/#iphones">
+      </div>
+      <div class="hub-card reveal">
         <span class="hub-ic">📱</span>
         <h3>Novos e seminovos</h3>
         <p>Lacrados com 1 ano e seminovos revisados com 3 meses de garantia. Aceitamos seu usado como entrada.</p>
-        <span class="hub-link">Ver iPhones →</span>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -316,6 +320,30 @@ footer a{color:var(--cyan)}
     </div>
     <div style="margin-top:36px" class="reveal">
       <a class="btn btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Quero%20ver%20os%20iPhones%20dispon%C3%ADveis%20(novos%20e%20seminovos)." target="_blank" rel="noopener">💬 Ver iPhones disponíveis</a>
+    </div>
+  </div>
+</section>
+
+<!-- IPHONE NO BOLETO (claro) -->
+<section class="light pad" id="boleto">
+  <div class="container center">
+    <span class="eyebrow reveal">💳 Sem cartão de crédito</span>
+    <h2 class="h-sec reveal">Compre seu iPhone <span class="hl">parcelado no boleto</span></h2>
+    <p class="sub reveal">Não precisa de cartão de crédito pra ter o seu iPhone.</p>
+    <div class="boleto-wrap reveal">
+      <h2 class="h-sec" style="font-size:clamp(1.5rem,3.2vw,2rem)">Parcelamento facilitado, <span class="hl">pra todo o Brasil</span></h2>
+      <p class="sub">Em parceria com uma financeira, você leva um iPhone novo ou seminovo pagando no boleto, com aprovação facilitada e parcelas que cabem no bolso — mesmo sem cartão de crédito. Fazemos uma pré-análise rápida e sem compromisso.</p>
+      <ul class="boleto-mods">
+        <li>✔ Consignado CLT</li>
+        <li>✔ Aposentados e pensionistas (INSS)</li>
+        <li>✔ Antecipação do FGTS</li>
+        <li>✔ Crédito na conta de luz</li>
+        <li>✔ Bolsa Família</li>
+      </ul>
+      <div style="margin-top:28px">
+        <a class="btn btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Quero%20fazer%20a%20pr%C3%A9-an%C3%A1lise%20para%20comprar%20um%20iPhone%20parcelado%20no%20boleto." target="_blank" rel="noopener">💬 Fazer minha pré-análise</a>
+      </div>
+      <p class="boleto-disc">Crédito sujeito a análise e aprovação da instituição financeira parceira. Modalidades e condições variam conforme o seu perfil.</p>
     </div>
   </div>
 </section>
