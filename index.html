@@ -142,6 +142,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.82);backdrop-fi
 .city-chip:hover{color:var(--cyan);border-color:var(--cyan)}
 .city-chip.main{color:var(--cyan);border-color:var(--cyan);font-weight:600}
 
+/* galeria de produtos */
+.gallery{column-count:3;column-gap:16px;max-width:1000px;margin:44px auto 0}
+.gallery img{width:100%;border-radius:16px;margin-bottom:16px;display:block;break-inside:avoid;border:1px solid var(--card-border);box-shadow:0 0 20px rgba(0,212,255,.1);transition:transform .25s,box-shadow .25s}
+.gallery img:hover{transform:translateY(-5px);box-shadow:0 0 32px rgba(0,212,255,.28)}
+@media(max-width:760px){.gallery{column-count:2;column-gap:12px}}
+@media(max-width:420px){.gallery{column-count:1}}
+
 /* vídeos */
 .videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:44px auto 0}
 .video-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--card-border);box-shadow:0 0 26px rgba(0,212,255,.14);background:#000;transition:transform .2s,box-shadow .25s}
@@ -262,6 +269,25 @@ footer a{color:var(--cyan)}
         <p>Lacrados com 1 ano e seminovos revisados com 3 meses de garantia. Aceitamos seu usado como entrada.</p>
         <span class="hub-link">Ver iPhones →</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- NOSSOS IPHONES (escuro) -->
+<section class="dark pad" id="produtos">
+  <div class="container center">
+    <span class="eyebrow reveal">📱 Loja</span>
+    <h2 class="h-sec reveal">Nossos <span class="hl">iPhones</span></h2>
+    <p class="sub center reveal" style="margin:0 auto 4px">Novos lacrados e seminovos revisados, todos com garantia. Aceitamos seu usado como entrada e enviamos para todo o Brasil.</p>
+    <div class="gallery reveal">
+      <img src="/img/produtos/iphone1.jpg" alt="iPhones Pro à venda na PS do iPhone" loading="lazy">
+      <img src="/img/produtos/iphone3.jpg" alt="iPhone dourado seminovo na PS do iPhone" loading="lazy">
+      <img src="/img/produtos/iphone2.jpg" alt="iPhone roxo seminovo na PS do iPhone" loading="lazy">
+      <img src="/img/produtos/iphone5.jpg" alt="iPhone laranja na PS do iPhone" loading="lazy">
+      <img src="/img/produtos/iphone4.jpg" alt="iPhone novo lacrado na caixa na PS do iPhone" loading="lazy">
+    </div>
+    <div style="margin-top:36px" class="reveal">
+      <a class="btn btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Quero%20ver%20os%20iPhones%20dispon%C3%ADveis%20(novos%20e%20seminovos)." target="_blank" rel="noopener">💬 Ver iPhones disponíveis</a>
     </div>
   </div>
 </section>
