@@ -116,6 +116,9 @@ header{
 .hero h1 .neon-r{color:var(--orange);text-shadow:0 0 30px rgba(255,94,58,.65)}
 .hero p{color:var(--muted);font-size:1.08rem;max-width:640px;margin:18px auto 34px;line-height:1.7}
 .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-phone{display:inline-block;margin-top:20px;color:var(--muted);font-size:.92rem;letter-spacing:.3px;transition:color .2s}
+.hero-phone strong{color:#e8eefc;font-weight:600}
+.hero-phone:hover,.hero-phone:hover strong{color:#19c37d}
 .ecg{width:min(680px,90%);margin:34px auto 0;opacity:.9}
 .ecg path{
   stroke:var(--cyan);stroke-width:2.5;fill:none;
@@ -498,6 +501,7 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
     <a class="btn btn-wpp" href="https://api.whatsapp.com/send?phone=5511969346452&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20atendimento." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
     <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
   </div>
+  <a class="hero-phone" href="tel:+5511969346452" aria-label="Ligar para (11) 96934-6452">📞 Prefere ligar? <strong>(11) 96934-6452</strong></a>
   <svg class="ecg" viewBox="0 0 680 80" aria-hidden="true">
     <path d="M0,40 L120,40 L150,40 L165,12 L185,68 L200,28 L215,40 L320,40 L350,40 L365,12 L385,68 L400,28 L415,40 L540,40 L570,40 L585,12 L605,68 L620,28 L635,40 L680,40"/>
   </svg>
