@@ -116,9 +116,10 @@ header{
 .hero h1 .neon-r{color:var(--orange);text-shadow:0 0 30px rgba(255,94,58,.65)}
 .hero p{color:var(--muted);font-size:1.08rem;max-width:640px;margin:18px auto 34px;line-height:1.7}
 .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hero-phone{display:inline-block;margin-top:20px;color:var(--muted);font-size:.92rem;letter-spacing:.3px;transition:color .2s}
+.hero-phone{display:none;margin-top:20px;color:var(--muted);font-size:.92rem;letter-spacing:.3px;transition:color .2s}
 .hero-phone strong{color:#e8eefc;font-weight:600}
 .hero-phone:hover,.hero-phone:hover strong{color:#19c37d}
+@media(max-width:768px){.hero-phone{display:inline-block}}
 .ecg{width:min(680px,90%);margin:34px auto 0;opacity:.9}
 .ecg path{
   stroke:var(--cyan);stroke-width:2.5;fill:none;
