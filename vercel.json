@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/boleto",
+      "destination": "/comprar-iphone-parcelado-no-boleto",
+      "permanent": true
+    }
+  ]
+}
