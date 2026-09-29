@@ -35,6 +35,11 @@
     --clay-dark: #B85E3F;
     --whats: #25D366;
     --whats-dark: #1FB955;
+    --navy: #0B2545;
+    --navy-2: #143C6E;
+    --blue: #1E6FD9;
+    --cyan: #3FC8F0;
+    --navy-soft: #C3D7EF;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Public Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); }
@@ -66,9 +71,10 @@
   .hero-actions .btn { padding: 15px 26px; font-size: 16px; }
   .hero-image { flex: 1 1 380px; aspect-ratio: 4/3; border-radius: 20px; background: var(--panel); display: flex; align-items: center; justify-content: center; color: #8A8778; font-size: 14px; font-weight: 500; text-align: center; padding: 20px; }
 
-  .callout-bar { background: var(--ink); padding: 22px 0; }
+  .callout-bar { background: linear-gradient(90deg, var(--navy) 0%, var(--navy-2) 100%); padding: 22px 0; }
   .callout-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between; }
-  .callout-item { flex: 1 1 200px; display: flex; align-items: center; gap: 10px; color: var(--bg); font-size: 14px; font-weight: 600; }
+  .callout-item { flex: 1 1 200px; display: flex; align-items: center; gap: 10px; color: #EAF3FF; font-size: 14px; font-weight: 600; }
+  .callout-item .dot { background: var(--cyan); box-shadow: 0 0 10px rgba(63,200,240,.75); }
 
   section.services { max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 40px; }
   .section-head { max-width: 620px; display: flex; flex-direction: column; gap: 10px; }
@@ -84,7 +90,7 @@
   .steps-inner h2 { font-size: 28px; font-weight: 600; text-align: center; }
   .steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
   .step { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-  .step-num { width: 36px; height: 36px; border-radius: 999px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Fraunces', serif; }
+  .step-num { width: 36px; height: 36px; border-radius: 999px; background: linear-gradient(140deg, var(--navy-2), var(--navy)); color: var(--bg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Fraunces', serif; }
   .step .title { font-size: 16px; font-weight: 600; }
   .step .desc { font-size: 14px; color: var(--muted); line-height: 1.5; }
 
@@ -95,9 +101,9 @@
   .testi-card .quote { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
   .testi-card .name { font-size: 13px; font-weight: 600; }
 
-  .cta-final { background: var(--ink); padding: 72px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
-  .cta-final h2 { color: var(--bg); font-size: 30px; font-weight: 600; max-width: 560px; }
-  .cta-final p { color: #C8C6BA; max-width: 480px; margin: 0; font-size: 15px; }
+  .cta-final { background: radial-gradient(900px 420px at 18% -10%, rgba(30,111,217,.38), transparent 62%), linear-gradient(135deg, var(--navy) 0%, #0E2C52 55%, var(--navy-2) 100%); padding: 72px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+  .cta-final h2 { color: #FFFFFF; font-size: 30px; font-weight: 600; max-width: 560px; }
+  .cta-final p { color: var(--navy-soft); max-width: 480px; margin: 0; font-size: 15px; }
   .cta-final .btn { padding: 16px 32px; font-size: 16px; }
 
   .location { max-width: 1200px; margin: 0 auto; padding: 72px 24px; display: flex; gap: 40px; align-items: center; }
@@ -120,6 +126,61 @@
     .hero h1 { font-size: 34px; }
     .location { flex-direction: column; }
   }
+
+  /* ---- animacoes do hero ---- */
+  @keyframes floatA { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+  @keyframes floatB { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+  @keyframes drawCrack {
+    0%   { stroke-dashoffset: 460; opacity: 0 }
+    6%   { opacity: 1 }
+    22%  { stroke-dashoffset: 0; opacity: 1 }
+    88%  { stroke-dashoffset: 0; opacity: 1 }
+    100% { stroke-dashoffset: 0; opacity: .15 }
+  }
+  @keyframes shardIn { 0%, 20% { opacity: 0 } 32%, 92% { opacity: .1 } 100% { opacity: 0 } }
+  @keyframes popCheck {
+    0%, 30%  { transform: scale(.2); opacity: 0 }
+    46%      { transform: scale(1.12); opacity: 1 }
+    56%, 92% { transform: scale(1); opacity: 1 }
+    100%     { transform: scale(1); opacity: .85 }
+  }
+  @keyframes sheen { 0%, 34% { transform: translateX(-70px) } 62%, 100% { transform: translateX(230px) } }
+  @keyframes badgePulse { 0%, 100% { opacity: 1 } 50% { opacity: .78 } }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: none } }
+  @keyframes heroIn { from { opacity: 0; transform: translateY(24px) scale(.97) } to { opacity: 1; transform: none } }
+
+  .ph { will-change: transform }
+  .phA { animation: floatA 6s ease-in-out infinite }
+  .phB { animation: floatB 7.2s ease-in-out infinite .6s }
+  .cracks path { stroke-dasharray: 460; animation: drawCrack 9s ease-out infinite }
+  .cracks g > path:nth-child(2) { animation-delay: .12s }
+  .cracks g > path:nth-child(3) { animation-delay: .24s }
+  .cracks g > path:nth-child(4) { animation-delay: .36s }
+  .cracks g > path:nth-child(5) { animation-delay: .1s }
+  .cracks g > path:nth-child(6) { animation-delay: .3s }
+  .cracks g > path:nth-child(7) { animation-delay: .2s }
+  .cracks .shards { animation: shardIn 9s ease-out infinite }
+  .sheen { animation: sheen 9s ease-in-out infinite }
+  .check { transform-box: fill-box; transform-origin: center; animation: popCheck 9s ease-out infinite }
+  .badge-ok { animation: badgePulse 3.4s ease-in-out infinite }
+  .hero-image { animation: heroIn .9s cubic-bezier(.2,.7,.3,1) both }
+  .hero-copy > * { animation: riseIn .7s cubic-bezier(.2,.7,.3,1) both }
+  .hero-copy > *:nth-child(1) { animation-delay: .05s }
+  .hero-copy > *:nth-child(2) { animation-delay: .14s }
+  .hero-copy > *:nth-child(3) { animation-delay: .23s }
+  .hero-copy > *:nth-child(4) { animation-delay: .32s }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ph, .cracks path, .cracks .shards, .sheen, .check, .badge-ok, .hero-image, .hero-copy > * {
+      animation: none !important;
+    }
+    .cracks path { stroke-dashoffset: 0 }
+  }
+
+  /* ---- entrada ao rolar ---- */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
+  .reveal.on { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none } }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness",
@@ -161,30 +222,36 @@
       <a class="btn btn-outline" href="tel:+5511969346452">(11) 96934-6452</a>
     </div>
   </div>
-  <div class="hero-image" style="padding:0;overflow:hidden;background:linear-gradient(160deg,#F3EFE4,#E6E0D1)">
+  <div class="hero-image" style="padding:0;overflow:hidden;background:linear-gradient(160deg,#EEF3FA 0%,#DCE6F3 60%,#CFDDEF 100%)">
     <svg viewBox="0 0 600 450" width="100%" height="100%" role="img" aria-label="Um iPhone com a tela trincada ao lado do mesmo iPhone com a tela nova, pronto em 40 minutos">
       <defs>
         <linearGradient id="scrNew" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#FFF3EC"/><stop offset=".55" stop-color="#F0A184"/><stop offset="1" stop-color="#D97757"/>
         </linearGradient>
         <linearGradient id="scrBad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#3A3A37"/><stop offset="1" stop-color="#1C1C1A"/>
+          <stop offset="0" stop-color="#25394F"/><stop offset="1" stop-color="#101C29"/>
         </linearGradient>
         <linearGradient id="bodyG" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#2E2E2B"/><stop offset="1" stop-color="#121211"/>
+          <stop offset="0" stop-color="#1D3557"/><stop offset="1" stop-color="#0A1B2E"/>
+        </linearGradient>
+        <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".42"/>
+          <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
         </linearGradient>
         <filter id="sh" x="-30%" y="-30%" width="160%" height="170%">
-          <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#141413" flood-opacity=".28"/>
+          <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0B2545" flood-opacity=".32"/>
         </filter>
         <clipPath id="scr"><rect x="13" y="13" width="184" height="304" rx="22"/></clipPath>
       </defs>
 
+      <g class="ph phA">
       <g transform="translate(58 74) rotate(-8 105 165)" filter="url(#sh)">
         <rect width="210" height="330" rx="32" fill="url(#bodyG)"/>
         <rect x="6" y="6" width="198" height="318" rx="27" fill="none" stroke="#5A5A54" stroke-width="1.4"/>
         <rect x="13" y="13" width="184" height="304" rx="22" fill="url(#scrBad)"/>
         <rect x="80" y="22" width="50" height="11" rx="5.5" fill="#0C0C0B"/>
-<g clip-path="url(#scr)">
+<g clip-path="url(#scr)" class="cracks">
           <g stroke="#F2EFE6" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <g stroke-width="1.5" opacity=".78">
               <path d="M118.0 128.0 L137.2 128.0 L153.1 124.2 L168.3 123.8 L182.9 124.9 L197.1 124.7"/>
@@ -216,7 +283,7 @@
               <path d="M154.1 109.9 L171.4 75.2"/>
             </g>
           </g>
-          <g fill="#FFFFFF" opacity=".1">
+          <g class="shards" fill="#FFFFFF" opacity=".1">
             <polygon points="116.5,115.2 123.9,101.6 108.0,102.9"/>
             <polygon points="110.8,129.3 93.9,124.0 95.8,138.3"/>
             <polygon points="111.5,137.7 97.0,143.6 109.5,152.7"/>
@@ -230,27 +297,33 @@
         </g>
       </g>
       <g transform="translate(58 26)">
-        <rect width="132" height="30" rx="15" fill="#141413"/>
+        <rect width="132" height="30" rx="15" fill="#0B2545"/>
         <circle cx="19" cy="15" r="4.5" fill="#E2624A"/>
         <text x="32" y="20" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#FAF9F5">Tela trincada</text>
       </g>
+      </g>
 
+      <g class="ph phB">
       <g transform="translate(312 96) rotate(7 105 165)" filter="url(#sh)">
         <rect width="210" height="330" rx="32" fill="url(#bodyG)"/>
         <rect x="6" y="6" width="198" height="318" rx="27" fill="none" stroke="#6B6A61" stroke-width="1.4"/>
         <rect x="13" y="13" width="184" height="304" rx="22" fill="url(#scrNew)"/>
         <rect x="80" y="22" width="50" height="11" rx="5.5" fill="#0C0C0B"/>
+        <g clip-path="url(#scr)"><rect class="sheen" x="0" y="13" width="46" height="304" fill="url(#sheenG)"/></g>
         <text x="105" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="46" font-weight="700" fill="#FFFFFF" opacity=".95">14:32</text>
         <text x="105" y="166" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" opacity=".8">quarta-feira</text>
         <g transform="translate(105 232)">
-          <circle r="30" fill="#FFFFFF" opacity=".92"/>
-          <path d="M-13 1 L-4 11 L14 -9" fill="none" stroke="#B85E3F" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <g class="check">
+            <circle r="30" fill="#FFFFFF" opacity=".92"/>
+            <path d="M-13 1 L-4 11 L14 -9" fill="none" stroke="#1E6FD9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
         </g>
       </g>
       <g transform="translate(372 398)">
-        <rect width="190" height="34" rx="17" fill="#141413"/>
+        <rect class="badge-ok" width="190" height="34" rx="17" fill="#0B2545"/>
         <circle cx="21" cy="17" r="5" fill="#25D366"/>
         <text x="36" y="22" font-family="system-ui,sans-serif" font-size="13.5" font-weight="600" fill="#FAF9F5">Pronto em 40 minutos</text>
+      </g>
       </g>
     </svg>
   </div>
@@ -328,5 +401,21 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var alvos = document.querySelectorAll('.section-head, .card, .steps-inner h2, .step, .testimonials h2, .testi-card, .cta-final > *, .location-copy, .location-map, .callout-item');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  alvos.forEach(function(el, i){
+    el.classList.add('reveal');
+    el.style.transitionDelay = ((i % 6) * 70) + 'ms';
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  alvos.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
