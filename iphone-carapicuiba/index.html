@@ -119,12 +119,64 @@
   .footer-links { display: flex; gap: 18px; }
   .footer-links a { font-size: 13px; color: var(--muted); }
 
+  /* ---- tablet ---- */
   @media (max-width: 900px) {
     nav .link { display: none; }
-    .hero { flex-direction: column; }
-    .cards-grid, .steps-grid, .testi-grid { grid-template-columns: 1fr; }
+    .hero { flex-direction: column; align-items: stretch; gap: 32px; padding: 44px 20px; }
+    .hero-copy { flex: none; gap: 18px; }
+    .hero-image { flex: none; width: 100%; height: auto; aspect-ratio: 4/3; padding: 0; }
     .hero h1 { font-size: 34px; }
-    .location { flex-direction: column; }
+    .cards-grid, .testi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps-grid { grid-template-columns: 1fr; }
+    .location { flex-direction: column; align-items: stretch; }
+    .location-map { flex: none; width: 100%; height: auto; aspect-ratio: 16/9; }
+    /* area de toque confortavel a partir do tablet */
+    nav .btn-whatsapp { min-height: 44px; padding: 12px 20px; }
+    .location-copy .phone { display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
+  }
+
+  /* ---- celular ---- */
+  @media (max-width: 600px) {
+    .header-inner { padding: 12px 16px; gap: 12px; }
+    .logo img { height: 40px; }
+    nav { gap: 12px; }
+    nav .btn-whatsapp { padding: 12px 16px; min-height: 44px; }
+
+    .hero { padding: 26px 16px 34px; gap: 26px; }
+    .hero h1 { font-size: 30px; line-height: 1.15; }
+    .hero p.sub { font-size: 16px; }
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+    .hero-actions .btn { width: 100%; justify-content: center; padding: 16px 20px; min-height: 54px; }
+    .hero-image { aspect-ratio: 4 / 3; border-radius: 16px; }
+
+    .callout-bar { padding: 16px 0; }
+    .callout-inner { padding: 0 16px; gap: 12px 14px; }
+    .callout-item { flex: 1 1 calc(50% - 14px); font-size: 13px; gap: 8px; }
+
+    section.services, section.testimonials { padding: 48px 16px; gap: 24px; }
+    .section-head h2 { font-size: 26px; }
+    .section-head p { font-size: 15px; }
+    .cards-grid, .testi-grid { grid-template-columns: 1fr; gap: 14px; }
+    .card, .testi-card { padding: 18px; }
+
+    .steps-section { padding: 48px 0; }
+    .steps-inner { padding: 0 16px; gap: 26px; }
+    .steps-inner h2, section.testimonials h2 { font-size: 26px; }
+    .steps-grid { gap: 22px; }
+
+    .cta-final { padding: 52px 16px; gap: 16px; }
+    .cta-final h2 { font-size: 25px; }
+    .cta-final .btn { width: 100%; max-width: 380px; justify-content: center; min-height: 54px; }
+
+    .location { padding: 48px 16px; gap: 22px; }
+    .location-copy h2 { font-size: 24px; }
+    .location-copy .phone { display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; }
+
+    footer { padding: 22px 16px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-links { gap: 20px; flex-wrap: wrap; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
   }
 
   /* ---- animacoes do hero ---- */
@@ -310,8 +362,8 @@
         <rect x="13" y="13" width="184" height="304" rx="22" fill="url(#scrNew)"/>
         <rect x="80" y="22" width="50" height="11" rx="5.5" fill="#0C0C0B"/>
         <g clip-path="url(#scr)"><rect class="sheen" x="0" y="13" width="46" height="304" fill="url(#sheenG)"/></g>
-        <text x="105" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="46" font-weight="700" fill="#FFFFFF" opacity=".95">14:32</text>
-        <text x="105" y="166" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" opacity=".8">quarta-feira</text>
+        <text id="lockHora" x="105" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="46" font-weight="700" fill="#FFFFFF" opacity=".95">14:32</text>
+        <text id="lockDia" x="105" y="166" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" opacity=".8">quarta-feira</text>
         <g transform="translate(105 232)">
           <g class="check">
             <circle r="30" fill="#FFFFFF" opacity=".92"/>
@@ -415,6 +467,33 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   alvos.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script>
+/* relogio da tela de bloqueio: sempre no horario de Carapicuiba/SP */
+(function(){
+  var elHora = document.getElementById('lockHora'),
+      elDia  = document.getElementById('lockDia');
+  if (!elHora || !elDia) return;
+
+  var TZ = 'America/Sao_Paulo', fHora, fDia;
+  try {
+    fHora = new Intl.DateTimeFormat('pt-BR', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
+    fDia  = new Intl.DateTimeFormat('pt-BR', { timeZone: TZ, weekday: 'long' });
+    fHora.format(new Date());
+  } catch (e) { return; }  /* navegador sem suporte: mantem o valor fixo do SVG */
+
+  var timer;
+  function pintar(){
+    var agora = new Date();
+    elHora.textContent = fHora.format(agora).replace('.', '').replace(/^24/, '00');
+    elDia.textContent  = fDia.format(agora).replace(/^\w/, function(c){ return c.toLowerCase(); });
+    /* reagenda para a virada do proximo minuto */
+    clearTimeout(timer);
+    timer = setTimeout(pintar, 60000 - (agora.getSeconds() * 1000 + agora.getMilliseconds()) + 50);
+  }
+  pintar();
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) pintar(); });
 })();
 </script>
 </body>
