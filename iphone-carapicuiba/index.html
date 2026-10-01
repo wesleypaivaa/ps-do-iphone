@@ -161,6 +161,29 @@
   .reason-icon svg { width: 24px; height: 24px; stroke-width: 1.75; }
   .reason-text { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.45; text-wrap: balance; }
 
+  /* hub: logo no centro ligado aos 3 motivos por linhas com pulso de luz */
+  .reasons-hub { position: relative; width: 100%; max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; isolation: isolate; }
+  .reasons-hub::before { content: ''; position: absolute; inset: -48px 0; z-index: -1; pointer-events: none; background-image: radial-gradient(circle, rgba(11,37,69,.22) 1px, transparent 1.2px); background-size: 24px 24px; -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 40%, #000 0%, transparent 75%); mask-image: radial-gradient(ellipse 60% 70% at 50% 40%, #000 0%, transparent 75%); }
+  .hub-logo { position: relative; z-index: 2; width: 88px; height: 88px; border-radius: 24px; background: var(--card); border: 1px solid var(--line); box-shadow: var(--glass), var(--sh-2); display: flex; align-items: center; justify-content: center; }
+  .hub-logo img { width: 150px; max-width: none; height: auto; }
+  .hub-logo::after { content: ''; position: absolute; inset: -1px; border-radius: inherit; border: 2px solid rgba(30,111,217,.28); animation: hub-ring 3s ease-out infinite; pointer-events: none; }
+  .hub-lines { display: block; width: 100%; height: 72px; overflow: visible; }
+  .hub-base { fill: none; stroke: rgba(11,37,69,.16); stroke-width: 1.25; vector-effect: non-scaling-stroke; }
+  .hub-flow { fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: .16 1.2; stroke-dashoffset: .16; animation: hub-flow 3.4s linear infinite; }
+  .hub-dot { fill: var(--blue); }
+  /* icones surgem um a um quando a secao entra na tela */
+  .reason.reveal .reason-icon { opacity: 0; transform: scale(.8); transition: opacity .5s var(--ease), transform .5s var(--ease), box-shadow .3s var(--ease); }
+  .reason.reveal.on .reason-icon { opacity: 1; transform: none; }
+  .reason.reveal:nth-child(1) .reason-icon { transition-delay: .25s, .25s, 0s; }
+  .reason.reveal:nth-child(2) .reason-icon { transition-delay: .4s, .4s, 0s; }
+  .reason.reveal:nth-child(3) .reason-icon { transition-delay: .55s, .55s, 0s; }
+  @keyframes hub-flow { from { stroke-dashoffset: .16 } to { stroke-dashoffset: -1 } }
+  @keyframes hub-ring { 0% { transform: scale(1); opacity: .8 } 70%, 100% { transform: scale(1.2); opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) {
+    .hub-flow { animation: none; stroke-dasharray: none; opacity: .35; }
+    .hub-logo::after { animation: none; opacity: 0; }
+  }
+
   /* cards: microinteracao de hover (so em mouse) */
   .reason, .testi-card { transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease); }
   @media (hover: hover) {
@@ -236,7 +259,9 @@
     .hero { flex-direction: column; align-items: stretch; gap: var(--s5); padding: var(--s6) 24px; }
     .hero-copy { flex: none; gap: 20px; }
     .hero-image { flex: none; width: 100%; height: auto; aspect-ratio: 4/3; padding: 0; }
-    .cards-grid, .testi-grid, .reasons-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards-grid, .testi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .reasons-grid { gap: var(--s2); }
+    .reason { padding: var(--s3) var(--s2); }
     /* passos em coluna: capsula a esquerda, linha vertical ligando */
     .steps-grid { grid-template-columns: 1fr; gap: var(--s4); }
     .step { display: grid; grid-template-columns: 56px 1fr; column-gap: var(--s2); row-gap: 4px; align-items: start; }
@@ -277,6 +302,10 @@
     .testi-card { padding: var(--s3); }
     .reason { flex-direction: row; text-align: left; gap: var(--s2); }
     .reason-icon { width: 48px; height: 48px; border-radius: 14px; }
+    .hub-side { display: none; }
+    .hub-lines { height: 40px; }
+    .hub-logo { width: 76px; height: 76px; border-radius: 20px; }
+    .hub-logo img { width: 130px; }
 
     .steps-inner { padding: 0 16px; gap: var(--s4); }
 
@@ -510,18 +539,26 @@
   <div class="section-head" style="max-width:100%;align-items:center;text-align:center;margin:0 auto">
     <h2>Motivos pra confiar na gente</h2>
   </div>
-  <div class="reasons-grid">
-    <div class="reason">
-      <div class="reason-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div class="reason-text">Garantia de verdade, do início ao fim do atendimento</div>
-    </div>
-    <div class="reason">
-      <div class="reason-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 009.57 3H4a1 1 0 00-1 1v5.57a2 2 0 00.59 1.41l9.59 9.59a2 2 0 002.82 0l4.59-4.59a2 2 0 000-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
-      <div class="reason-text">Valor justo, combinado com você antes de qualquer coisa</div>
-    </div>
-    <div class="reason">
-      <div class="reason-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-      <div class="reason-text">Agilidade e cuidado em cada atendimento</div>
+  <div class="reasons-hub">
+    <div class="hub-logo" aria-hidden="true"><img src="/img/logo.png" alt="" width="150" height="84" loading="lazy"></div>
+    <svg class="hub-lines" viewBox="0 0 960 72" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="hub-base hub-side" d="M480 0 C480 40 152 32 152 72"/><path class="hub-flow hub-side" pathLength="1" d="M480 0 C480 40 152 32 152 72"/>
+      <path class="hub-base" d="M480 0 L480 72"/><path class="hub-flow" pathLength="1" style="animation-delay:.5s" d="M480 0 L480 72"/>
+      <path class="hub-base hub-side" d="M480 0 C480 40 808 32 808 72"/><path class="hub-flow hub-side" pathLength="1" style="animation-delay:1s" d="M480 0 C480 40 808 32 808 72"/>
+    </svg>
+    <div class="reasons-grid">
+      <div class="reason">
+        <div class="reason-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="reason-text">Garantia de verdade, do início ao fim do atendimento</div>
+      </div>
+      <div class="reason">
+        <div class="reason-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 009.57 3H4a1 1 0 00-1 1v5.57a2 2 0 00.59 1.41l9.59 9.59a2 2 0 002.82 0l4.59-4.59a2 2 0 000-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+        <div class="reason-text">Valor justo, combinado com você antes de qualquer coisa</div>
+      </div>
+      <div class="reason">
+        <div class="reason-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <div class="reason-text">Agilidade e cuidado em cada atendimento</div>
+      </div>
     </div>
   </div>
   <div style="display:flex;justify-content:center;margin-top:8px">
