@@ -165,6 +165,22 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,11,36,.82);backdrop-fi
 .city-chip{font-size:.86rem;font-weight:500;padding:8px 17px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--muted);transition:color .2s,border-color .2s}
 .city-chip:hover{color:var(--cyan);border-color:var(--cyan)}
 .city-chip.main{color:var(--cyan);border-color:var(--cyan);font-weight:600}
+/* hub animado da area de atendimento: loja no centro, cidades em volta (posicao aproximada no mapa) */
+.hub-lines,.hub-center{display:none}
+@media (min-width:760px){
+  .hub-cities{position:relative;display:block;max-width:900px;aspect-ratio:1000/520;margin:34px auto 0}
+  .hub-lines{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .hub-base{fill:none;stroke:rgba(0,212,255,.18);stroke-width:1.25;vector-effect:non-scaling-stroke}
+  .hub-flow{fill:none;stroke:var(--cyan);stroke-width:2;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:.14 1.2;stroke-dashoffset:.14;filter:drop-shadow(0 0 4px rgba(0,212,255,.8));animation:hub-flow 3.6s linear infinite}
+  .hub-center{display:flex;position:absolute;left:50%;top:calc(225 / 5.2 * 1%);transform:translate(-50%,-50%);z-index:3;width:96px;height:96px;align-items:center;justify-content:center;border-radius:24px;background:#0e1542;border:1px solid var(--card-border);box-shadow:0 0 0 6px rgba(0,212,255,.05),0 0 36px rgba(0,212,255,.28)}
+  .hub-center img{width:150px;max-width:none;height:auto}
+  .hub-center::after{content:'';position:absolute;inset:-1px;border-radius:inherit;border:2px solid rgba(0,212,255,.35);animation:hub-ring 3s ease-out infinite}
+  .hub-cities .city-chip{position:absolute;z-index:2;left:calc(var(--x) * .1%);top:calc(var(--y) / 5.2 * 1%);transform:translate(-50%,-50%);white-space:nowrap;background:#0e1542}
+}
+@keyframes hub-flow{from{stroke-dashoffset:.14}to{stroke-dashoffset:-1}}
+@keyframes hub-ring{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.22);opacity:0}}
+@media (prefers-reduced-motion:reduce){.hub-flow{animation:none;stroke-dasharray:none;opacity:.35}.hub-center::after{animation:none;opacity:0}}
+
 
 /* galeria de produtos */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:44px auto 0}
@@ -448,17 +464,30 @@ footer a{color:var(--cyan)}
     <span class="eyebrow reveal">🗺️ Área de atendimento</span>
     <h2 class="h-sec reveal" style="font-size:clamp(1.6rem,3.4vw,2.3rem)">Atendemos <span class="hl">Carapicuíba e região</span></h2>
     <p class="sub center reveal" style="margin:0 auto">Recebemos clientes de toda a região metropolitana oeste de São Paulo. E enviamos iPhones para todo o Brasil. 🇧🇷</p>
-    <div class="cities-list reveal">
-      <span class="city-chip main">Carapicuíba</span>
-      <span class="city-chip">Osasco</span>
-      <span class="city-chip">Barueri</span>
-      <span class="city-chip">Alphaville</span>
-      <span class="city-chip">Santana de Parnaíba</span>
-      <span class="city-chip">Cotia</span>
-      <span class="city-chip">Itapevi</span>
-      <span class="city-chip">Jandira</span>
-      <span class="city-chip">Vargem Grande Paulista</span>
-      <span class="city-chip">+ regiões próximas</span>
+    <div class="cities-list hub-cities reveal">
+      <svg class="hub-lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="hub-base" d="M500 225 L500 345"/><path class="hub-flow" pathLength="1" style="animation-delay:0.0s" d="M500 225 L500 345"/>
+      <path class="hub-base" d="M500 225 C680 225 680 235 860 235"/><path class="hub-flow" pathLength="1" style="animation-delay:0.4s" d="M500 225 C680 225 680 235 860 235"/>
+      <path class="hub-base" d="M500 225 C600 225 600 70 700 70"/><path class="hub-flow" pathLength="1" style="animation-delay:0.8s" d="M500 225 C600 225 600 70 700 70"/>
+      <path class="hub-base" d="M500 225 C490 225 490 40 480 40"/><path class="hub-flow" pathLength="1" style="animation-delay:1.2s" d="M500 225 C490 225 490 40 480 40"/>
+      <path class="hub-base" d="M500 225 C350 225 350 85 200 85"/><path class="hub-flow" pathLength="1" style="animation-delay:1.6s" d="M500 225 C350 225 350 85 200 85"/>
+      <path class="hub-base" d="M500 225 C570 225 570 460 640 460"/><path class="hub-flow" pathLength="1" style="animation-delay:2.0s" d="M500 225 C570 225 570 460 640 460"/>
+      <path class="hub-base" d="M500 225 C310 225 310 370 120 370"/><path class="hub-flow" pathLength="1" style="animation-delay:2.4s" d="M500 225 C310 225 310 370 120 370"/>
+      <path class="hub-base" d="M500 225 C335 225 335 235 170 235"/><path class="hub-flow" pathLength="1" style="animation-delay:2.8s" d="M500 225 C335 225 335 235 170 235"/>
+      <path class="hub-base" d="M500 225 C415 225 415 470 330 470"/><path class="hub-flow" pathLength="1" style="animation-delay:3.2s" d="M500 225 C415 225 415 470 330 470"/>
+      <path class="hub-base" d="M500 225 C680 225 680 410 860 410"/><path class="hub-flow" pathLength="1" style="animation-delay:3.6s" d="M500 225 C680 225 680 410 860 410"/>
+      </svg>
+      <div class="hub-center" aria-hidden="true"><img src="/img/logo.png" alt="" width="88" height="88" loading="lazy"></div>
+      <span class="city-chip main" style="--x:500;--y:345">Carapicuíba</span>
+      <span class="city-chip" style="--x:860;--y:235">Osasco</span>
+      <span class="city-chip" style="--x:700;--y:70">Barueri</span>
+      <span class="city-chip" style="--x:480;--y:40">Alphaville</span>
+      <span class="city-chip" style="--x:200;--y:85">Santana de Parnaíba</span>
+      <span class="city-chip" style="--x:640;--y:460">Cotia</span>
+      <span class="city-chip" style="--x:120;--y:370">Itapevi</span>
+      <span class="city-chip" style="--x:170;--y:235">Jandira</span>
+      <span class="city-chip" style="--x:330;--y:470">Vargem Grande Paulista</span>
+      <span class="city-chip" style="--x:860;--y:410">+ regiões próximas</span>
     </div>
   </div>
 </section>

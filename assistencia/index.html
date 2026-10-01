@@ -264,6 +264,32 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
 .bg-light .section-title{color:#0d1438}
 .bg-light .section-title .hl{color:#007ab8;text-shadow:none}
 .bg-light .section-sub{color:#4a5580}
+/* hub animado dos servicos: loja no centro ligada aos reparos */
+.svc-hub{position:relative;max-width:760px;aspect-ratio:1000/460;margin:40px auto 48px}
+.svc-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.svc-base{fill:none;stroke:rgba(0,122,184,.22);stroke-width:1.25;vector-effect:non-scaling-stroke}
+.svc-flow{fill:none;stroke:#007ab8;stroke-width:2;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:.14 1.2;stroke-dashoffset:.14;animation:hub-flow 3.6s linear infinite}
+.svc-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:104px;height:104px;display:flex;align-items:center;justify-content:center;border-radius:26px;background:#fff;border:1px solid rgba(0,122,184,.22);box-shadow:0 10px 30px rgba(13,20,56,.12)}
+.svc-center img{width:160px;max-width:none;height:auto}
+.svc-center::after{content:'';position:absolute;inset:-1px;border-radius:inherit;border:2px solid rgba(0,122,184,.3);animation:hub-ring 3s ease-out infinite}
+.svc-node{--ic:52px;position:absolute;z-index:2;left:calc(var(--x) * .1%);top:calc(var(--y) / 5 * 1%);transform:translate(-50%,calc(var(--ic) / -2));display:flex;flex-direction:column;align-items:center;gap:6px}
+.svc-ic{width:var(--ic);height:var(--ic);display:flex;align-items:center;justify-content:center;border-radius:15px;background:#fff;color:#007ab8;border:1px solid rgba(26,58,122,.14);box-shadow:0 4px 14px rgba(13,20,56,.08);transition:transform .25s,border-color .25s,box-shadow .25s}
+.svc-ic svg{width:24px;height:24px}
+.svc-lb{font-size:.78rem;font-weight:600;color:#1a3a7a;white-space:nowrap}
+@media (hover:hover){.svc-node:hover .svc-ic{transform:translateY(-2px);border-color:#007ab8;box-shadow:0 8px 22px rgba(0,122,184,.18)}}
+@media (max-width:600px){
+  .svc-hub{aspect-ratio:10/9;margin:28px auto 36px}
+  .svc-node{--ic:44px}
+  .svc-ic{border-radius:13px}
+  .svc-ic svg{width:21px;height:21px}
+  .svc-lb{font-size:.72rem}
+  .svc-center{width:80px;height:80px;border-radius:22px}
+  .svc-center img{width:124px}
+}
+@keyframes hub-flow{from{stroke-dashoffset:.14}to{stroke-dashoffset:-1}}
+@keyframes hub-ring{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.2);opacity:0}}
+@media (prefers-reduced-motion:reduce){.svc-flow{animation:none;stroke-dasharray:none;opacity:.35}.svc-center::after{animation:none;opacity:0}}
+
 .bg-light .rating-num{color:#b8860b;text-shadow:none}
 .bg-light .stars{color:#d4920a}
 .bg-light .rating-meta p{color:#4a5580}
@@ -524,6 +550,24 @@ footer .footer-logo{height:88px;width:auto;margin:0 auto 12px}
     <span class="section-tag">🛠 Assistência especializada</span>
     <h2 class="section-title">Tudo que o seu iPhone precisa, <span class="hl">em um só lugar</span></h2>
     <p class="section-sub">Especialistas em Apple. Diagnóstico honesto, peças de qualidade e garantia blindada de 3 meses em todos os reparos.</p>
+
+    <div class="svc-hub" aria-hidden="true">
+      <svg class="svc-lines" viewBox="0 0 1000 500" preserveAspectRatio="none" focusable="false">
+      <path class="svc-base" d="M500 250 C325 250 325 90 150 90"/><path class="svc-flow" pathLength="1" style="animation-delay:0.0s" d="M500 250 C325 250 325 90 150 90"/>
+      <path class="svc-base" d="M500 250 L150 250"/><path class="svc-flow" pathLength="1" style="animation-delay:0.4s" d="M500 250 L150 250"/>
+      <path class="svc-base" d="M500 250 C325 250 325 410 150 410"/><path class="svc-flow" pathLength="1" style="animation-delay:0.8s" d="M500 250 C325 250 325 410 150 410"/>
+      <path class="svc-base" d="M500 250 C675 250 675 90 850 90"/><path class="svc-flow" pathLength="1" style="animation-delay:1.2s" d="M500 250 C675 250 675 90 850 90"/>
+      <path class="svc-base" d="M500 250 L850 250"/><path class="svc-flow" pathLength="1" style="animation-delay:1.6s" d="M500 250 L850 250"/>
+      <path class="svc-base" d="M500 250 C675 250 675 410 850 410"/><path class="svc-flow" pathLength="1" style="animation-delay:2.0s" d="M500 250 C675 250 675 410 850 410"/>
+      </svg>
+      <div class="svc-center"><img src="/img/logo.png" alt="" width="84" height="84" loading="lazy"></div>
+      <div class="svc-node" style="--x:150;--y:90"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><span class="svc-lb">Tela</span></div>
+      <div class="svc-node" style="--x:150;--y:250"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 10.5v3M10 10.5v3"/></svg></span><span class="svc-lb">Bateria</span></div>
+      <div class="svc-node" style="--x:150;--y:410"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><span class="svc-lb">Placa</span></div>
+      <div class="svc-node" style="--x:850;--y:90"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.7S6 9.1 6 13.7a6 6 0 0 0 12 0c0-4.6-6-11-6-11z"/></svg></span><span class="svc-lb">Água</span></div>
+      <div class="svc-node" style="--x:850;--y:250"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.2"/></svg></span><span class="svc-lb">Câmera</span></div>
+      <div class="svc-node" style="--x:850;--y:410"><span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-5"/><path d="M9 8V2M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg></span><span class="svc-lb">Carregador</span></div>
+    </div>
 
     <div class="grid grid-3" style="text-align:left">
       <div class="card">
